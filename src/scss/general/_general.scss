@@ -1,0 +1,62 @@
+@use "../theme/colors-default" as theme;
+
+body {
+  background-color: var(--color-off-white);
+  color: var(--color-black);
+
+  &.body--nav-open {
+    overflow: hidden;
+  }
+}
+
+main {
+  background-image: url("../images/how-it-works/bg-mobile.webp");
+  background-repeat: no-repeat;
+  background-position: center top 860px;
+  background-size: 720px;
+
+  @media (min-width: 1024px) {
+    background-image: url("../images/how-it-works/bg-desktop.webp");
+    background-position: center 450px;
+    background-size: 2900px 2300px;
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 1460px;
+  margin-inline: auto;
+  padding-right: 20px;
+  padding-left: 20px;
+  &.container-big {
+    max-width: 1880px;
+  }
+}
+
+.section {
+  padding-top: 106px;
+
+  @media (min-width: 1280px) {
+    padding-top: 200px;
+  }
+}
+
+.mobile-nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-teal-deep);
+  opacity: .8;
+  z-index: 2;
+  transform: translateY(-100%);
+  transition-duration: .25s;
+}
+
+.body--nav-open {
+  .mobile-nav-overlay {
+    transform: translateY(0);
+    transition-delay: .1s;
+  }
+}

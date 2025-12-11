@@ -1,0 +1,63 @@
+
+@font-face {
+  font-display: swap;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/inter/inter-v20-latin-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/inter/inter-v20-latin-500.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/poppins/poppins-v24-latin-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/poppins/poppins-v24-latin-500.woff2') format('woff2');
+}
+
+
+
+body {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 1.4;
+
+  @media (min-width: 1280px) {
+    font-size: 20px;
+  }
+}
+
+h1, h2, h3, .section-subtitle, .title {
+  font-family: "Poppins", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 32px;
+  line-height: 1.1;
+  letter-spacing: .32px;
+
+  @media (min-width: 1280px) {
+    font-size: 40px;
+  }
+}

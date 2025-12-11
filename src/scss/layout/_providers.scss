@@ -1,0 +1,122 @@
+@use "../theme/colors-default" as theme;
+
+.providers {
+  color: var(--color-white);
+
+  &__inner {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: var(--color-teal-deep);
+
+    @media (max-width: 1023px) {
+      margin-inline: -20px;
+    }
+
+    @media (min-width: 768px) {
+      padding-top: 32px;
+      padding-bottom: 32px;
+    }
+    
+    @media (min-width: 1024px) {
+      border-radius: 24px;
+    }
+
+    @media (min-width: 1280px) {
+      padding-top: 64px;
+      padding-bottom: 64px;
+    }
+
+    &-header {
+      @media (min-width: 768px) {
+        max-width: 500px;
+        margin-inline: auto;
+        text-align: center;
+      }
+
+      @media (min-width: 1280px) {
+        max-width: 640px;
+      }
+
+      @media (min-width: 1440px) {
+        max-width: none;
+      }
+    }
+  }
+
+  h2 {
+    margin-bottom: 12px;
+    color: var(--color-pale-cyan);
+  }
+
+  &__list {
+    display: grid;
+    grid-row-gap: 24px;
+    margin-top: 24px;
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+      max-width: 380px;
+      margin-inline: auto;
+    }
+
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(3, 1fr);
+      grid-column-gap: 20px;
+    }
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      border-radius: 16px;
+      box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.25);
+
+      &-img {
+        position: relative;
+        border-top-right-radius: 16px;
+        border-top-left-radius: 16px;
+        overflow: hidden;
+
+        &::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 66.66%, #000 100%);
+        }
+      }
+
+      &-name {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        padding: 10px 20px;
+
+        .name {
+          font-size: 24px;
+          color: var(--color-pale-cyan);
+        }
+      }
+
+      &-text {
+        padding: 24px 20px;
+        flex-grow: 1;
+        background-color: var(--color-white);
+        color: var(--color-black-new);
+        border-bottom-right-radius: 16px;
+        border-bottom-left-radius: 16px;
+      }
+    }
+
+    .toggle-inline {
+      display: block;
+      margin-top: 4px;
+      font: {
+        weight: 700;
+      }
+      color: var(--color-teal-deep);
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,39 @@
+@use "../theme/colors-default" as theme;
+
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  text-align: center;
+  border-radius: 30px;
+  transition-duration: .25s;
+  cursor: pointer;
+  font: {
+    size: 14px;
+    weight: 500;
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 20px;
+    padding: 16px 40px;
+  }
+
+  &-primary {
+    background-color: var(--color-teal-deep);
+    color: var(--color-white);
+
+    &:hover {
+      background-color: var(--color-black);
+    }
+  }
+
+  &-secondary {
+    background-color: var(--color-pale-cyan);
+    color: var(--color-black );
+
+
+    &:hover {
+      background-color: var(--color-teal-deep);
+      color: var(--color-white);
+    }
+  }
+}

@@ -1,0 +1,211 @@
+@use "../theme/colors-default" as theme;
+
+.advantages {
+  &__inner {
+    padding: 20px 0;
+    background-color: var(--color-teal-deep);
+
+    @media (max-width: 1279px) {
+      margin-right: -20px;
+      margin-left: -20px;
+    }
+
+    @media (min-width: 768px) {
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+
+    @media (min-width: 1280px) {
+      padding-top: 64px;
+      padding-bottom: 64px;
+      border-radius: 20px;
+    }
+  }
+
+  h2 {
+    max-width: 300px;
+    margin-bottom: 24px;
+    color: var(--color-pale-cyan);
+
+    @media (min-width: 768px) {
+      max-width: none;
+      text-align: center;
+    }
+
+    @media (min-width: 1280px) {
+      margin-bottom: 42px;
+    }
+  }
+
+  &__list {
+    @media (min-width: 1280px) {
+      width: auto;
+      padding-left: 640px;
+      flex-direction: column;
+      row-gap: 16px;
+    }
+
+    &-item {
+      height: auto;
+      display: flex;
+      flex-direction: column;
+
+      @media (min-width: 1280px) {
+        position: static;
+        transform: none!important;
+      }
+
+      &-img {
+        display: block;
+        border-radius: 16px;
+        overflow: hidden;
+
+        @media (max-width: 1279px) {
+          margin-bottom: -36px;
+        }
+
+        @media (min-width: 1280px) {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 600px;
+          height: 100%;
+          opacity: 0;
+          transition-duration: .25s;
+        }
+
+        img {
+          height: auto;
+
+          @media (min-width: 1280px) {
+            height: 100%;
+            width: 100%;
+            max-width: none;
+            object-fit: cover;
+          }
+        }
+      }
+
+      &-text {
+        position: relative;
+        display: flex;
+        flex-grow: 1;
+        column-gap: 12px;
+        padding: 20px;
+        background-color: var(--color-white);
+        border-radius: 16px;
+
+        @media (min-width: 1280px) {
+          padding: 12px;
+          border-radius: 8px;
+          background-color: var(--color-teal-blue);
+          transition-duration: .25s;
+        }
+
+        @media (min-width: 1440px) {
+          column-gap: 24px;
+        }
+      }
+
+      h3 {
+        margin-bottom: 4px;
+        font-size: 16px;
+        line-height: 1.2;
+        letter-spacing: .16px;
+        color: var(--color-teal-blue);
+
+        @media (min-width: 1280px) {
+          font-size: 18px;
+          color: var(--color-white);
+        }
+
+        @media (min-width: 1440px) {
+          margin-bottom: 12px;
+        }
+      }
+
+      .icon {
+        display: block;
+        grid-row: span 2;
+        width: 72px;
+        height: 72px;
+        flex-shrink: 0;
+        padding: 12px;
+        border-radius: 3px;
+        background-color: var(--color-teal-deep);
+
+        svg {
+          width: 100%;
+        }
+      }
+
+      .text-wrapper {
+        @media (min-width: 1280px) {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          font-size: 18px;
+        }
+
+        @media (min-width: 1440px) {
+          font-size: 20px;
+        }
+
+        p {
+          @media (min-width: 1280px) {
+            color: var(--color-white);
+            transition-duration: .25s;
+          }
+        }
+      }
+
+      &.active {
+        .advantages__list-item-img {
+          opacity: 1;
+        }
+
+        .advantages__list-item-text {
+          background-color: var(--color-white);
+        }
+
+        h3 {
+          color: var(--color-teal-blue);
+        }
+
+        .text-wrapper p {
+          color: var(--color-black);
+        }
+      }
+    }
+  }
+
+  .swiper-pagination {
+    position: static;
+    display: flex;
+    justify-content: center;
+    column-gap: 10px;
+    margin-top: 12px;
+    padding: 2px;
+
+    @media (min-width: 1280px) {
+      display: none;
+    }
+
+    &-bullet {
+      --swiper-pagination-bullet-horizontal-gap: 0;
+      --swiper-pagination-bullet-inactive-opacity: 1;
+
+      width: 12px;
+      height: 12px;
+      border-radius: 100%;
+      background-color: var(--color-teal-blue);
+      transition-duration: .25s;
+
+      &-active {
+        background-color: var(--color-pale-cyan);
+      }
+    }
+  }
+
+
+}

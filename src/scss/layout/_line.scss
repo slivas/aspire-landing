@@ -1,0 +1,42 @@
+@use "../theme/colors-default" as theme;
+
+.logo-line {
+  height: 84px;
+  margin-top: 107px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-top: 1px solid var(--color-teal-deep);
+  border-bottom: 1px solid var(--color-teal-deep);
+
+  @media (min-width: 1280px) {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  @media (min-width: 1280px) {
+    margin-top: 200px;
+  }
+
+  &__list {
+    --logo-width: 176px;
+    --logo-gap: 78px;
+    --speed: 5s;
+
+    height: 100%;
+    background-image: url('../images/logo-line.webp');
+    background-repeat: repeat-x;
+    background-position: 0 center;
+    background-size: calc(var(--logo-width) + var(--logo-gap)) auto;
+    animation: logoLineSlide var(--speed) linear infinite;
+  }
+
+}
+
+@keyframes logoLineSlide {
+  0% {
+    background-position: 0 center;
+  }
+  100% {
+    background-position: calc(-1 * (var(--logo-width) + var(--logo-gap))) center;
+  }
+}

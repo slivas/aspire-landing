@@ -1,0 +1,28 @@
+//Utils
+@use "utils/theme-default";
+
+//General
+@use "general/reset";
+@use "general/fonts";
+@use "general/general";
+
+//Theme
+@use "theme/colors-default";
+
+//Components
+@use "components/nav-toggle";
+@use "components/btn";
+@use "components/accordion";
+
+//Layout
+@use "layout/header";
+@use "layout/hero";
+@use "layout/how-it-works";
+@use "layout/solutions";
+@use "layout/cta";
+@use "layout/providers";
+@use "layout/reviews";
+@use "layout/advantages";
+@use "layout/faq";
+@use "layout/line";
+@use "layout/footer";

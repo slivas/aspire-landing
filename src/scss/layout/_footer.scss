@@ -1,0 +1,158 @@
+@use "../theme/colors-default" as theme;
+
+.footer {
+  padding-top: 64px;
+  padding-bottom: 64px;
+  background-color: var(--color-teal-deep);
+  color: var(--color-white);
+
+  @media (min-width: 1280px) {
+    padding-top: 150px;
+    padding-bottom: 150px;
+  }
+
+  .container {
+    display: grid;
+    grid-gap: 42px;
+    
+    @media (min-width: 1024px) {
+      grid-template-columns: 300px 1fr;
+      grid-column-gap: 100px;
+    }
+  }
+
+  a {
+    transition-duration: .25s;
+
+    &:hover {
+      color: var(--color-pale-cyan);
+
+      &::before {
+        @media (min-width: 1024px) {
+          transform: scaleX(1);
+          transform-origin: bottom left;
+        }
+      }
+    }
+  }
+
+  &__contacts-wrapper {
+    padding-top: 32px;
+    border-top: 1px solid var(--color-pale-cyan);
+  }
+
+  &__contacts-subtitle {
+    display: none;
+  }
+
+  &__logo {
+    display: block;
+    width: 300px;
+    margin: 0 auto 32px
+  }
+
+  &__title {
+    margin-bottom: 16px;
+    font-size: 20px;
+    color: var(--color-pale-cyan);
+    letter-spacing: .2px;
+  }
+
+  .contacts {
+    &__list {
+      @media (min-width: 768px) and (max-width: 1023px){
+        display: flex;
+        justify-content: center;
+      }
+      
+      &-item {
+        a {
+          display: flex;
+          align-items: center;
+          column-gap: 12px;
+        }
+      }
+    }
+  }
+
+  &__nav {
+    &-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 42px;
+
+      @media (min-width: 768px) {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      @media (min-width: 1024px) {
+        justify-content: flex-end;
+        column-gap: 80px;
+      }
+
+      @media (min-width: 1280px) {
+        column-gap: 126px;
+      }
+
+      .footer__navigation {
+        @media (max-width: 767px) {
+          display: none;
+        }
+      }
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      row-gap: 8px;
+
+      @media (min-width: 1024px) {
+        align-items: flex-start;
+      }
+
+      a {
+        position: relative;
+        display: block;
+        padding-top: 4px;
+        padding-bottom: 4px;
+
+        &::before {
+          @media (min-width: 1024px) {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 2px;
+            width: 100%;
+            background-color: var(--color-pale-cyan);
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+          }
+        }
+
+        &:hover {
+          &::before {
+            @media (min-width: 1024px) {
+              transform: scaleX(1);
+              transform-origin: bottom left;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .trust-badges__list-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 20px;
+
+    &-img {
+      height: 64px;
+      width: auto;
+    }
+  }
+}

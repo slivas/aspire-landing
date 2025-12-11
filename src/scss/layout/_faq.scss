@@ -1,0 +1,46 @@
+@use "../theme/colors-default" as theme;
+
+.faq {
+  @media (min-width: 1280px) {
+    background-image: url("../images/faq/bg-desktop.webp");
+    background-repeat: no-repeat;
+    background-size: 964px 780px;
+    background-position: left -380px bottom;
+  }
+  .container {
+    @media (min-width: 1280px) {
+      display: grid;
+      grid-template-columns: 430px 1fr;
+      grid-column-gap: 40px;
+    }
+  }
+
+  h2 {
+    margin-bottom: 24px;
+
+    @media (min-width: 1280px) {
+      position: sticky;
+      top: 82px;
+    }
+  }
+
+  .accordion {
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+
+    @media (min-width: 1440px) {
+      max-width: 818px;
+      margin-left: auto;
+    }
+  }
+
+  .acc-trigger {
+    font-size: 24px;
+    color: var(--color-teal-deep);
+
+    @media (min-width: 1280px) {
+      font-size: 32px;
+    }
+  }
+}

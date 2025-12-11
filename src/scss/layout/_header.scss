@@ -1,0 +1,128 @@
+@use "../theme/colors-default" as theme;
+
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  display: flex;
+  height: 84px;
+  background-color: var(--color-white);
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.25);
+  transition-duration: .25s;
+  z-index: 10;
+
+  &-to-top {
+    transform: translateY(-110%);
+  }
+
+  .container {
+    display: flex;
+    max-width: 1880px;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (min-width: 1440px) {
+      padding-right: 74px;
+      padding-left: 74px;
+    }
+  }
+
+  &__logo {
+    display: block;
+    width: 160px;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+    font-weight: 500;
+
+    @media (max-width: 1023px) {
+      position: fixed;
+      left: 0;
+      top: 84px;
+      width: 100%;
+      padding: 34px 20px;
+      text-align: center;
+      background-color: var(--color-off-white);
+      border-bottom-right-radius: 30px;
+      border-bottom-left-radius: 30px;
+      transform: translateY(-100vh);
+      transition-duration: .25s;
+      z-index: 0;
+    }
+
+    &.header__nav--open {
+      @media (max-width: 1023px) {
+        transform: translateY(0);
+      }
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      row-gap: 12px;
+
+
+      @media (min-width: 1024px) {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        flex-direction: row;
+        column-gap: 24px;
+        transform: translate(-50%, -50%);
+      }
+
+      @media (min-width: 1280px) {
+        column-gap: 40px;
+        font-size: 18px;
+      }
+
+      @media (min-width: 1440px) {
+        font-size: 20px;
+      }
+
+      a {
+        display: block;
+        padding-top: 4px;
+        padding-bottom: 4px;
+
+        @media (min-width: 1024px) {
+          position: relative;
+          transition-duration: .25s;
+        }
+
+        &::before {
+          @media (min-width: 1024px) {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 2px;
+            width: 100%;
+            background-color: var(--color-teal-deep);
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+          }
+        }
+
+        &:hover {
+          color: var(--color-teal-deep);
+
+          &::before {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+          }
+        }
+      }
+    }
+  }
+}
+

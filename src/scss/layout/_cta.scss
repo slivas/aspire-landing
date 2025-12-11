@@ -1,0 +1,127 @@
+@use "../theme/colors-default" as theme;
+
+.cta {
+  .container {
+    max-width: 1880px;
+  }
+
+  &__inner {
+    display: grid;
+    grid-row-gap: 32px;
+    justify-items: center;
+    padding: 32px 24px 0;
+    border-radius: 24px;
+    background-image: url("../images/cta-weight-loss/cta-weight-loss-bg-mobile.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+    color: var(--color-white);
+    overflow: hidden;
+    
+    @media (min-width: 768px) {
+      padding: 80px 80px 0;
+      background-image: url("../images/cta-weight-loss/cta-weight-loss-bg-desktop.webp");
+    }
+
+    @media (min-width: 1024px) {
+      padding: 0 90px 0 24px;
+      grid-template-columns: 430px 1fr;
+      grid-column-gap: 40px;
+    }
+    
+    @media (min-width: 1280px) {
+      height: 560px;
+    }
+
+    @media (min-width: 1440px) {
+      grid-template-columns: 530px 1fr;
+      padding-left: 90px;
+    }
+
+    &-img {
+      max-width: 380px;
+
+      @media (min-width: 1024px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        max-width: 100%;
+      }
+      
+      img {
+        height: auto;
+      }
+    }
+
+    &-text {
+      @media (min-width: 1024px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding-top: 60px;
+        padding-bottom: 60px;
+        order: 1;
+      }
+
+      @media (min-width: 1280px) {
+        font-size: 24px;
+      }
+    }
+
+    .btn {
+      @media (max-width: 767px) {
+        width: 100%;
+      }
+    }
+  }
+
+  h2 {
+    margin-bottom: 12px;
+    color: var(--color-pale-cyan);
+
+    @media (min-width: 1280px) {
+      margin-bottom: 32px;
+    }
+  }
+
+  .description {
+    margin-bottom: 24px;
+
+    @media (min-width: 1280px) {
+      margin-bottom: 56px;
+      max-width: 810px;
+    }
+  }
+
+  &.cta-step {
+    .cta__inner {
+      @media (min-width: 1024px) {
+        grid-template-columns: 370px 1fr;
+      }
+
+      @media (min-width: 1280px) {
+        grid-template-columns: 424px 1fr;
+      }
+
+      @media (min-width: 1280px) {
+        grid-template-columns: 424px 640px;
+        justify-content: center;
+        grid-column-gap: 196px;
+      }
+
+      &-img {
+        @media (min-width: 1024px) {
+          padding-left: 60px;
+          padding-top: 60px;
+        }
+      }
+    }
+
+    .description {
+      @media (min-width: 1280px) {
+        max-width: 630px;
+      }
+    }
+  }
+}

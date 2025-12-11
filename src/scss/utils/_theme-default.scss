@@ -1,0 +1,7 @@
+@use "../theme/colors-default" as var;
+
+:root {
+  @each $name, $value in var.$colors {
+    --color-#{$name}: #{$value};
+  }
+}
