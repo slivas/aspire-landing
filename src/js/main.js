@@ -261,4 +261,34 @@ document.addEventListener('DOMContentLoaded', () => {
         lastP.appendChild(toggle);
     }
 
+    /*Scroll to the anchor*/
+
+    const desktopOffset = 84;
+    const mobileOffset = 84;
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener("click", function (e) {
+                const targetID = this.getAttribute("href");
+
+                if (targetID.length < 2) return;
+                const target = document.querySelector(targetID);
+                if (!target) return;
+
+                e.preventDefault();
+
+                const rect = target.getBoundingClientRect();
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+                const offset = window.innerWidth < 1024 ? mobileOffset : desktopOffset;
+
+                const targetY = rect.top + scrollTop - offset;
+
+                window.scrollTo({
+                    top: targetY,
+                    behavior: "smooth"
+                });
+            });
+        });
+
+
 });
