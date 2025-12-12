@@ -67,8 +67,27 @@
         align-items: center;
         background-color: var(--color-teal-deep);
         background-image: url("../images/solutions/img-item-bg-mobile.webp");
-        background-position: center top -70px;
+        background-repeat: no-repeat;
+        background-size: cover;
         color: var(--color-white);
+
+        .img-wrapper {
+          position: relative;
+          z-index: 1;
+
+          &::before {
+            content: "";
+            position: absolute;
+            left: 40px;
+            bottom: 0;
+            width: 152px;
+            height: 32px;
+            border-radius: 360px;
+            background: #223B3B;
+            filter: blur(12px);
+            z-index: -1;
+          }
+        }
 
         img {
           height: 240px;

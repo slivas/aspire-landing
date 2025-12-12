@@ -199,7 +199,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     /*Show more / less */
-    const CHAR_LIMIT = 250;
+    const CHAR_LIMIT = 240;
     const blocks = document.querySelectorAll(".js-review-text");
 
     if (!blocks.length) return;
