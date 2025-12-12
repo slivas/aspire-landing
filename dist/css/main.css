@@ -1436,6 +1436,16 @@ main {
   color: var(--color-pale-cyan);
   letter-spacing: 0.2px;
 }
+@media (min-width: 1024px) {
+  .footer__title {
+    font-size: 24px;
+  }
+}
+@media (min-width: 1280px) {
+  .footer__title {
+    font-size: 28px;
+  }
+}
 .footer .contacts__list {
   display: flex;
   flex-direction: column;
@@ -1524,6 +1534,11 @@ main {
     transform: scaleX(1);
     transform-origin: bottom left;
   }
+}
+.footer .trust-badges__list {
+  display: flex;
+  -moz-column-gap: 32px;
+       column-gap: 32px;
 }
 .footer .trust-badges__list-item {
   display: flex;
