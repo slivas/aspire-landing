@@ -1037,6 +1037,7 @@ main {
 }
 @media (min-width: 1024px) {
   .reviews h2 {
+    margin-bottom: 42px;
     text-align: center;
   }
 }
