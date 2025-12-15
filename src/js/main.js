@@ -290,5 +290,14 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
+    /*Show contacts*/
+
+    const showContacts = document.querySelector('.footer__show-contacts');
+    const contactsAdditional = document.querySelector('.contacts__list.additional');
+
+    showContacts.addEventListener('click', function (e){
+        this.style.display = 'none';
+        contactsAdditional.classList.add('is-open');
+    });
 
 });
