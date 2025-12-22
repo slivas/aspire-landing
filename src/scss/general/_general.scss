@@ -1,6 +1,9 @@
 @use "../theme/colors-default" as theme;
 
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   background-color: var(--color-off-white);
   color: var(--color-black);
 
@@ -10,6 +13,7 @@ body {
 }
 
 main {
+  flex-grow: 1;
   background-image: url("../images/how-it-works/bg-mobile.webp");
   background-repeat: no-repeat;
   background-position: center top 860px;
@@ -19,6 +23,16 @@ main {
     background-image: url("../images/how-it-works/bg-desktop.webp");
     background-position: center 450px;
     background-size: 2900px 2300px;
+  }
+
+  &.main-form {
+    padding-top: 80px;
+    padding-bottom: 80px;
+
+    @media (min-width: 1024px) {
+      min-height: 790px;
+      background-position: center 45px;
+    }
   }
 }
 
@@ -59,4 +73,13 @@ main {
     transform: translateY(0);
     transition-delay: .1s;
   }
+}
+
+.centered {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
