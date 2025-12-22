@@ -37,7 +37,10 @@
     </div>
 </header>
 <main>
-    <div class="container"></div>
+    <div class="container">
+        <iframe src="https://api.leadconnectorhq.com/widget/survey/9fAfxgvCHSS5NfR8oryC" style="border:none;width:100%;" scrolling="no" id="9fAfxgvCHSS5NfR8oryC" title="survey"></iframe>
+        <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+    </div>
 </main>
 <footer class="footer">
         <div class="container">
@@ -106,4 +109,34 @@
         </div>
     </footer>
 </body>
+
+<script>
+    const desktopOffset = 84;
+    const mobileOffset = 84;
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            const targetID = this.getAttribute("href");
+
+            if (targetID.length < 2) return;
+            const target = document.querySelector(targetID);
+            if (!target) return;
+
+            e.preventDefault();
+
+            const rect = target.getBoundingClientRect();
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            const offset = window.innerWidth < 1024 ? mobileOffset : desktopOffset;
+
+            const targetY = rect.top + scrollTop - offset;
+
+            window.scrollTo({
+                top: targetY,
+                behavior: "smooth"
+            });
+        });
+    });
+</script>
+
 </html>
