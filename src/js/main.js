@@ -261,34 +261,52 @@ document.addEventListener('DOMContentLoaded', () => {
         lastP.appendChild(toggle);
     }
 
-    /*Scroll to the anchor*/
-
+    /* Scroll to the anchor + remove hash from URL */
     const desktopOffset = 84;
     const mobileOffset = 84;
 
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener("click", function (e) {
-                const targetID = this.getAttribute("href");
+    function getOffset() {
+        return window.innerWidth < 1024 ? mobileOffset : desktopOffset;
+    }
 
-                if (targetID.length < 2) return;
-                const target = document.querySelector(targetID);
-                if (!target) return;
+    function scrollToTarget(target) {
+        const y = target.getBoundingClientRect().top + window.pageYOffset - getOffset();
+        window.scrollTo({ top: y, behavior: "smooth" });
+    }
 
-                e.preventDefault();
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener("click", (e) => {
+            const hash = a.getAttribute("href");
+            if (!hash || hash.length < 2) return;
 
-                const rect = target.getBoundingClientRect();
-                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const target = document.querySelector(hash);
+            if (!target) return;
 
-                const offset = window.innerWidth < 1024 ? mobileOffset : desktopOffset;
+            e.preventDefault();
 
-                const targetY = rect.top + scrollTop - offset;
+            scrollToTarget(target);
 
-                window.scrollTo({
-                    top: targetY,
-                    behavior: "smooth"
-                });
-            });
+            history.replaceState(null, "", window.location.pathname + window.location.search);
         });
+    });
+
+    (function handleHashOnLoad() {
+        const hash = window.location.hash;
+        if (!hash || hash.length < 2) return;
+
+        history.replaceState(null, "", window.location.pathname + window.location.search);
+
+        window.addEventListener("load", () => {
+            const target = document.querySelector(hash);
+            if (!target) return;
+
+            scrollToTarget(target);
+
+            setTimeout(() => {
+                history.replaceState(null, "", window.location.pathname + window.location.search);
+            }, 50);
+        });
+    })();
 
     /*Show contacts*/
 
